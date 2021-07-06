@@ -1,0 +1,3 @@
+<aura:component implements="lightning:actionOverride,force:hasRecordId,force:hasSObjectName,flexipage:availableForAllPageTypes">
+    <c:propertyInput recordId="{!v.recordId}"/>
+</aura:component>
