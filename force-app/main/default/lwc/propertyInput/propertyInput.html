@@ -1,0 +1,13 @@
+<template>
+  <lightning-card title="Property Input">
+
+      <lightning-record-form
+              object-api-name={propertyObject}
+              mode="edit"
+              layout-type="Full"
+              onsuccess={handleSuccess}
+              oncancel={onCancelEvent}>
+      </lightning-record-form>
+
+  </lightning-card>
+</template>
