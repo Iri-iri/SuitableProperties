@@ -1,0 +1,28 @@
+<template>
+  <div class="slds-is-relative">
+      <lightning-card title="Suitable Properties" icon-name="custom:custom12">
+
+          <lightning-button label="New"
+                            onclick={createProperty}
+                            slot="actions"></lightning-button>
+
+          <lightning-layout>
+              <lightning-layout-item if:true={data} size="12" padding="around-small">
+                  <lightning-datatable
+                          key-field="id"
+                          data={data}
+                          columns={columns}
+                          hide-checkbox-column>
+                  </lightning-datatable>
+              </lightning-layout-item>
+              <lightning-layout-item if:false={data} size="12">
+                  <div class="slds-container_center">
+                      <lightning-formatted-text value="No suitable properties found"></lightning-formatted-text>
+                  </div>
+              </lightning-layout-item>
+          </lightning-layout>
+      </lightning-card>
+      <template if:true={error}></template>
+      <lightning-spinner variant="brand" if:true={isLoading}></lightning-spinner>
+  </div>
+</template>
